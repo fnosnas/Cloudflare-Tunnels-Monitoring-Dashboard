@@ -41,7 +41,10 @@ TUNNEL_KV
 ```
  → 把返回的 id 填进 wrangler.toml
 
-wrangler secret put DASHBOARD_PASSWORD → 设置面板登录密码
+设置面板登录密码
+```
+DASHBOARD_PASSWORD
+```
 
 wrangler deploy → 部署上线
 
