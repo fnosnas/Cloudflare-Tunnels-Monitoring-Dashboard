@@ -35,7 +35,11 @@ index.js(完整 Worker 代码，含登录面板+定时巡查+GitHub 触发逻辑
 
 部署顺序简单说一下：
 
-wrangler kv namespace create TUNNEL_KV → 把返回的 id 填进 wrangler.toml
+wrangler kv namespace create 
+```
+TUNNEL_KV
+```
+ → 把返回的 id 填进 wrangler.toml
 
 wrangler secret put DASHBOARD_PASSWORD → 设置面板登录密码
 
@@ -44,6 +48,9 @@ wrangler deploy → 部署上线
 打开分配到的 *.workers.dev 地址,登录后在面板里填 Cloudflare Account ID / API Token,再逐条添加隧道(Tunnel ID、名称)和对应的 GitHub 仓库/workflow 文件/分支
 
 核心检测逻辑是每 3 分钟(可在 wrangler.toml 里改 cron)调用一次 Cloudflare 的 Tunnel 详情接口拿 status 字段,只在"从正常变异常"这个跳变点触发一次对应的 GitHub Actions,避免隧道持续断线时被反复触发。
+```
+*/3 * * * *
+```
 
 三项分别详细说明是:
 
