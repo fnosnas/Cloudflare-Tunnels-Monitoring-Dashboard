@@ -1,0 +1,18 @@
+name = "tunnel-monitor"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# KV 命名空间绑定
+# 先执行: wrangler kv namespace create TUNNEL_KV
+# 然后把返回的 id 填到下面
+kv_namespaces = [
+  { binding = "TUNNEL_KV", id = "在此填入你创建的KV命名空间ID" }
+]
+
+# 定时巡查频率，这里是每 3 分钟检查一次，可自行调整
+# cron 语法: 分 时 日 月 周
+[triggers]
+crons = ["*/3 * * * *"]
+
+# 登录密码不要写在这里，用下面命令写成 secret（不会出现在代码/仓库里）：
+#   wrangler secret put DASHBOARD_PASSWORD
