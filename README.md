@@ -48,7 +48,7 @@ DASHBOARD_PASSWORD
 
 打开分配到的 *.workers.dev 地址,登录后在面板里填 Cloudflare Account ID / API Token,再逐条添加隧道(Tunnel ID、名称)和对应的 GitHub 仓库/workflow 文件/分支
 
-三项分别详细说明是:
+全局配置三项分别详细说明:
 
 1. Cloudflare Account ID
 
