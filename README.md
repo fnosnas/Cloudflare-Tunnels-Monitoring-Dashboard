@@ -45,6 +45,7 @@ wrangler deploy → 部署上线
 https://one.dash.cloudflare.com/<这一串就是Account ID>/...     
 
 2. Cloudflare API Token
+   
 是什么:一个授权令牌,让 Worker 有权限通过 API 去读取你 Tunnel 的状态。不是你登录 Cloudflare 用的密码,是单独创建的、可以限定权限范围的令牌。
 怎么获取:
 
@@ -60,6 +61,7 @@ Account Resources 选你要监控的那个账号
 点 Continue → Create Token,生成后立刻复制保存(这个页面关掉后就再也看不到完整值了,只能重新生成)
 
 3. GitHub Token
+   
 是什么:授权 Worker 调用 GitHub API 去触发你仓库里的 Actions 工作流的令牌,和 GitHub 登录密码无关。
 怎么获取(推荐用 Fine-grained token,权限更精细安全):
 
