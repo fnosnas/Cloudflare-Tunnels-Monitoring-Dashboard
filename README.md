@@ -33,6 +33,7 @@ wrangler deploy → 部署上线
 三项分别详细说明是:
 
 1. Cloudflare Account ID
+
 是什么:你的 Cloudflare 账号的唯一标识,用来告诉 API "查询哪个账号下面的隧道"。
 怎么获取:
 
@@ -41,7 +42,8 @@ wrangler deploy → 部署上线
 在右侧栏往下拉,能看到 "Account ID" 一行,后面跟着一串字母数字,点击旁边的复制图标即可
 
 如果你没有绑定域名,也可以在 Zero Trust 后台(one.dash.cloudflare.com)的地址栏里看,URL 通常长这样:
-https://one.dash.cloudflare.com/<这一串就是Account ID>/...
+https://one.dash.cloudflare.com/<这一串就是Account ID>/...     
+
 2. Cloudflare API Token
 是什么:一个授权令牌,让 Worker 有权限通过 API 去读取你 Tunnel 的状态。不是你登录 Cloudflare 用的密码,是单独创建的、可以限定权限范围的令牌。
 怎么获取:
